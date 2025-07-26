@@ -1,0 +1,28 @@
+# .github/workflows/deploy.yml
+name: Deploy Docusaurus to GitHub Pages
+
+on:
+  push:
+    branches: [main] # 또는 master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 21
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Deploy to GitHub Pages
+        env:
+          GIT_USER: github-actions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub에서 자동 제공
+        run: |
+          npm deploy
