@@ -15,7 +15,7 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://dfl0w.github.io',
+  url: 'https://dfl0w.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -25,6 +25,7 @@ const config: Config = {
   organizationName: 'dfl0w', // Usually your GitHub org/user name.
   projectName: 'dfl0w.github.io', // Usually your repo name.
   trailingSlash: false,
+  deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
